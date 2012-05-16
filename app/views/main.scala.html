@@ -1,0 +1,34 @@
+@(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tweet Search</title>
+        <link rel="shortcut icon" type="image/png" href='@routes.Assets.at("images/favicon.png")'>
+        <script src='@routes.Assets.at("javascripts/jquery-1.7.1.min.js")' type="text/javascript"></script>
+        <script src='@routes.Assets.at("javascripts/bootstrap.js")' type="text/javascript"></script>
+        <link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+		<link rel="stylesheet" href='@routes.Assets.at("stylesheets/bootstrap-responsive.css")'>
+        <link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/main.css")'>
+    </head>
+    <body>
+            <div class="navbar navbar-fixed-top">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="brand" href="/">TweetSearch</a>
+                  <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/tweetsearch/new">new tweet search</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div>
+              </div>
+            </div>
+            <div class="container" style="max-width: 80%;">
+                <!--Body content-->
+                @content
+                <!--end Body content-->
+            </div>
+        </body>
+</html>

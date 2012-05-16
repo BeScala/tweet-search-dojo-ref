@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.TweetController.list
+
+GET     /tweetsearch/list           controllers.TweetController.list
+GET     /tweetsearch/new            controllers.TweetController.newForm
+GET     /tweetsearch/edit/:id       controllers.TweetController.editForm(id: Long)
+POST    /tweetsearch/save           controllers.TweetController.save
+GET     /tweetsearch/view/:id       controllers.TweetController.view(id: Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

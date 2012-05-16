@@ -1,0 +1,13 @@
+@(list: Seq[model.SearchTerm])
+
+@import views.html.helper._
+@import views.html.helper.twitterBootstrap._
+
+
+@main {
+    <div class="span9">
+	    <ul>
+            @list.reverse.map { e => <li>@e.text</li> }
+	    </ul>
+    </div>
+}
