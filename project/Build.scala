@@ -8,11 +8,16 @@ object ApplicationBuild extends Build {
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
-      // Add your project dependencies here,
+            "org.scalatest" %% "scalatest" % "1.6.1" % "test->default",
+            "com.novocode" % "junit-interface" % "0.7" % "test->default",
+            "ch.qos.logback" % "logback-classic" % "0.9.29" % "compile->default",
+            "junit" % "junit" % "4.8" % "test->default"
     )
 
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
-      // Add your own project settings here      
+      // Add your own project settings here
+
+      testOptions in Test := Nil
     )
 
 }

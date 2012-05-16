@@ -1,0 +1,43 @@
+{
+    "completed_in" : 0.53800000000000003,
+    "max_id" : 202877016410832897,
+    "max_id_str" : "202877016410832897",
+    "next_page" : "?page=2&max_id=202877016410832897&q=playframework&rpp=1&include_entities=1",
+    "page" : 1,
+    "query" : "playframework",
+    "refresh_url" : "?since_id=202877016410832897&q=playframework&include_entities=1",
+    "results" : [ {
+                    "created_at" : "Wed, 16 May 2012 16:34:05 +0000",
+                    "entities" : { "hashtags" : [],
+                        "urls" : [ {
+                                    "display_url" : "lnkd.in\/pwj2SE",
+                                    "expanded_url" : "http:\/\/lnkd.in\/pwj2SE",
+                                    "indices" : [ 97, 117 ],
+                            "url" : "http:\/\/t.co\/ugr9eYNs"
+                        } ],
+                        "user_mentions" : [  ]
+                    },
+                    "from_user" : "ManningBooks",
+                    "from_user_id" : 24914741,
+                    "from_user_id_str" : "24914741",
+                    "from_user_name" : "Manning Publications",
+                    "geo" : null,
+                    "id" : 202799090919161856,
+                    "id_str" : "202799090919161856",
+                    "iso_language_code" : "en",
+                    "metadata" : { "recent_retweets" : 1,
+                        "result_type" : "popular"
+                    },
+                    "profile_image_url" : "http:\/\/a0.twimg.com\/profile_images\/386363365\/uglyguy_normal.jpg",
+                    "profile_image_url_https" : "https:\/\/si0.twimg.com\/profile_images\/386363365\/uglyguy_normal.jpg",
+                    "source" : "<a href=\"http:\/\/www.linkedin.com\/\" rel=\"nofollow\">LinkedIn<\/a>",
+                    "text" : "Playframework updates on Play for Scala and Play for Java in MEAP (Manning Early Access Program) http:\/\/t.co\/ugr9eYNs",
+                    "to_user" : null,
+                    "to_user_id" : 0,
+                    "to_user_id_str" : "0",
+                    "to_user_name" : null
+                    }],
+    "results_per_page" : 1,
+    "since_id" : 0,
+    "since_id_str" : "0"
+}
