@@ -6,8 +6,6 @@ import org.junit.Test
 import org.junit.Assert._
 
 class TweetParserTest extends FunSuite{
-
-
   test("testing parsing of Twitter Search result"){
     val payload = Source.fromFile("test/util/tweet.json").mkString
 

@@ -1,7 +1,3 @@
-
-
 package model
 
-case class Tweet(content:String) {
-
-}
+case class Tweet(content:String)
