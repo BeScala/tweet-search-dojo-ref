@@ -6,8 +6,18 @@
 
 @main {
     <div class="span9">
-	    <ul>
-            @list.reverse.map { e => <li>@e.text</li> }
-	    </ul>
+        @list.reverse.map {  searchTerm =>
+        <div class="entry">
+            <div class="title">
+                <h4><a href="@routes.TweetController.tweets(searchTerm.text, 10)">@searchTerm.text</a></h4>
+            </div>
+            <div class="actions">
+                <ul class="nav nav-pills">
+                    <li><a href="@routes.TweetController.editForm(searchTerm.id)" class="btn">Edit</a></li>
+                    <li><a href="@routes.TweetController.tweets(searchTerm.text, 10)" class="btn">See results</a></li>
+                </ul>
+            </div>
+        </div>
+        }
     </div>
 }

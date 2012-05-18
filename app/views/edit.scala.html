@@ -5,5 +5,16 @@
 @main {
     @helper.form(action = routes.TweetController.save, args = 'class -> "form-horizontal") {
 
+        <input type="hidden" name="id" id="id" value='@form("id").value'/>
+        <fieldset>
+            <legend>Add new TweetSearch</legend>
+
+            @helper.inputText(form("text"))
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Publish</button>
+                <a href="@routes.TweetController.list" class="btn">Cancel</a>
+            </div>
+        </fieldset>
+
    }
 }
