@@ -15,7 +15,14 @@ object TweetParser {
       val content = (e \ "text").as[String]
       val imgUrl = (e \ "profile_image_url").as[String]
       val date = (e \ "created_at").as[String]
-      Tweet(id,content,user, imgUrl, date)
+      val entities = (e \ "entities")
+      Tweet(id,content,user, imgUrl, date, collectMediaUrls(entities))
     }
+  }
+
+  private def collectMediaUrls(json: JsValue) : List[String] = {
+    val urls = (json \ "urls").as[List[JsValue]]
+    val listOfOptionalUrls = urls.map { url => (url \ "expanded_url").asOpt[String] }
+    listOfOptionalUrls.collect { case Some(url) => url }
   }
 }

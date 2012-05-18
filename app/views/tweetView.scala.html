@@ -8,7 +8,12 @@
         <td style="border-right: 1px solid #d3d3d3;" width="55px" >
             <a href="http://twitter.com/@tweet.user"><img src="@tweet.imgUrl" vspace="10" hspace="5"/></a>
         </td>
-        <td>@tweet.content</td>
+        <td>
+            @tweet.content <br/>
+            @for(url <- tweet.urls) {
+                <a href="@url">@url</a><br/>
+            }
+        </td>
     </tr>
     <tr>
         <td style="border-right: 1px solid #d3d3d3;" ></td>

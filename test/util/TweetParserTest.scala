@@ -13,5 +13,7 @@ class TweetParserTest extends FunSuite{
     assert(tweets.size === 1)
     val tweet = tweets(0)
     assert(tweet.content.startsWith("Playframework"))
+
+    assert (tweet.urls.size === 1)
   }
 }
