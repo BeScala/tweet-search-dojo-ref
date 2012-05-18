@@ -1,0 +1,11 @@
+@(list: List[model.Tweet])
+
+@import views.html.helper._
+@import views.html.helper.twitterBootstrap._
+@import views.html.tweetView
+
+@main {
+<div class="span9">
+    @list.map { e => @tweetView(e) }
+</div>
+}

@@ -1,0 +1,22 @@
+@(tweet: model.Tweet)
+
+@import views.html.helper._
+@import views.html.helper.twitterBootstrap._
+<div style="margin-bottom: 30px; padding-bottom: 5px">
+<table width="100%" cellpadding="5">
+    <tr>
+        <td style="border-right: 1px solid #d3d3d3;" width="55px" >
+            <a href="http://twitter.com/@tweet.user"><img src="@tweet.imgUrl" vspace="10" hspace="5"/></a>
+        </td>
+        <td>@tweet.content</td>
+    </tr>
+    <tr>
+        <td style="border-right: 1px solid #d3d3d3;" ></td>
+        <td style="border-top: 1px solid #d3d3d3;">
+            <a href="http://twitter.com/@tweet.user">@@@tweet.user</a> @tweet.date
+        </td>
+    </tr>
+
+</table>
+</div>
+

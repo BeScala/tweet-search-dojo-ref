@@ -2,7 +2,9 @@ package controllers
 
 import play.api.mvc._
 import collection.mutable.ListBuffer
-import model.SearchTerm
+import service.TweetProvider
+import play.api.libs.concurrent.Promise
+import model.{Tweet, SearchTerm}
 
 object TweetController extends Controller {
 
@@ -32,5 +34,13 @@ object TweetController extends Controller {
    * Fill form with existing SearchTerm
    */
   def editForm(id: Long) = TODO
+
+
+  def tweets(searchTerm: String, max: Int) = Action {
+    Async {
+      val promiseOfTweets: Promise[List[Tweet]] = TweetProvider.fetchTweets(searchTerm, max)
+      promiseOfTweets.map { tweets => Ok(views.html.tweets(tweets))}
+    }
+  }
 
 }

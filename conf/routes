@@ -5,11 +5,15 @@
 # Home page
 GET     /                           controllers.TweetController.list
 
-GET     /tweetsearch/list           controllers.TweetController.list
-GET     /tweetsearch/new            controllers.TweetController.newForm
-GET     /tweetsearch/edit/:id       controllers.TweetController.editForm(id: Long)
-POST    /tweetsearch/save           controllers.TweetController.save
-GET     /tweetsearch/view/:id       controllers.TweetController.view(id: Long)
+GET     /tweetsearch/list                   controllers.TweetController.list
+GET     /tweetsearch/new                    controllers.TweetController.newForm
+GET     /tweetsearch/edit/:id               controllers.TweetController.editForm(id: Long)
+POST    /tweetsearch/save                   controllers.TweetController.save
+GET     /tweetsearch/view/:id               controllers.TweetController.view(id: Long)
+GET     /tweetsearch/tweets/:query     controllers.TweetController.tweets(query: String, max: Int ?= 10)
+GET     /tweetsearch/tweets/:query/:max     controllers.TweetController.tweets(query: String, max: Int)
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
