@@ -15,7 +15,7 @@ object TweetController extends Controller {
    * List all availables search terms
    */
   def list = Action {
-    Ok(views.html.list(SearchTerm.all))
+    Ok(views.html.list(SearchTerm.all, emptyForm))
   }
 
   /**
@@ -23,7 +23,7 @@ object TweetController extends Controller {
    */
   def save = Action { implicit request =>
     searchTermForm.bindFromRequest.fold(
-      errors => { BadRequest(views.html.edit(errors)) },
+      errors => { BadRequest(views.html.list(SearchTerm.all, errors)) },
       term => {
         term.save()
         Redirect(routes.TweetController.list())
@@ -42,17 +42,23 @@ object TweetController extends Controller {
       "text" -> nonEmptyText)(SearchTerm.apply)(SearchTerm.unapply)
   }
 
+  def delete(id: Long) = Action {
+    SearchTerm.delete(id)
+    Redirect(routes.TweetController.list())
+  }
+
+
   /**
    * Prepares an empty form for new SearchTerm
    */
-  def newForm = toFormPage(searchTermForm.fill(SearchTerm("")))
+  def newForm = toFormPage(emptyForm)
 
   /**
    * Fill form with existing SearchTerm
    */
   def editForm(id: Long) = toFormPage(searchTermForm.fill(SearchTerm.findById(id)))
-
-  private def toFormPage(form: Form[SearchTerm]) = Action(Ok(views.html.edit(form)))
+  private def emptyForm = searchTermForm.fill(SearchTerm(""))
+  private def toFormPage(form: Form[SearchTerm]) = Action(Ok(views.html.list(SearchTerm.all, form)))
 
   def tweets(searchTerm: String, max: Int) = Action {
     Async {

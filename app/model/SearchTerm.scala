@@ -12,7 +12,7 @@ object SearchTerm {
   val terms = new ListBuffer[SearchTerm]
 
   def save(searchTerm: SearchTerm): SearchTerm = {
-    findByIdOpt(searchTerm.id).foreach(s => terms -= s)
+    delete(searchTerm.id)
     terms += searchTerm
     searchTerm
   }
@@ -24,6 +24,10 @@ object SearchTerm {
   def findByIdOpt(id: Long): Option[SearchTerm] = terms.find(e => e.id == id)
 
   def findById(id: Long): SearchTerm = terms.find(e => e.id == id).get
+
+  def delete(id: Long) = {
+    findByIdOpt(id).foreach( s=> terms -= s)
+  }
 
   implicit def toActiveRecord(searchTerm: SearchTerm) = new {
     def save() = SearchTerm.save(searchTerm)

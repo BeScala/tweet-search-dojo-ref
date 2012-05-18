@@ -8,6 +8,7 @@ GET     /                           controllers.TweetController.list
 GET     /tweetsearch/list                   controllers.TweetController.list
 GET     /tweetsearch/new                    controllers.TweetController.newForm
 GET     /tweetsearch/edit/:id               controllers.TweetController.editForm(id: Long)
+GET     /tweetsearch/delete/:id             controllers.TweetController.delete(id: Long)
 POST    /tweetsearch/save                   controllers.TweetController.save
 GET     /tweetsearch/view/:id               controllers.TweetController.view(id: Long)
 GET     /tweetsearch/tweets/:query     controllers.TweetController.tweets(query: String, max: Int ?= 10)
