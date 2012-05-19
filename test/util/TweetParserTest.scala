@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 import org.junit.Test
 import org.junit.Assert._
 
-class TweetParserTest extends FunSuite{
+class TweetParserTest extends FunSuite {
   test("testing parsing of Twitter Search result"){
     val payload = Source.fromFile("test/util/tweet.json").mkString
 
@@ -15,5 +15,6 @@ class TweetParserTest extends FunSuite{
     assert(tweet.content.startsWith("Playframework"))
 
     assert (tweet.urls.size === 1)
+    assert (tweet.tags.size === 1)
   }
 }

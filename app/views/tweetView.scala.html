@@ -10,6 +10,10 @@
         </td>
         <td>
             @tweet.content <br/>
+            @for(tag <- tweet.tags) {
+               <a href="@routes.TweetController.tweets(tag, 10)">#@tag</a>&nbsp;&nbsp;
+            }
+            <br />
             @for(url <- tweet.urls) {
                 <a href="@url">@url</a><br/>
             }

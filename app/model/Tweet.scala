@@ -5,4 +5,5 @@ case class Tweet(id: Long,
                  user:String,
                  imgUrl: String,
                  date: String,
-                 urls : List[String])
+                 urls : List[String],
+                 tags : List[String])

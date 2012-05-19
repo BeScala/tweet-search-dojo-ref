@@ -7,6 +7,7 @@ import play.api.libs.concurrent.Promise
 import model.{Tweet, SearchTerm}
 import play.api.data.Form
 import play.api.data.Forms._
+import play.api.Logger
 
 
 object TweetController extends Controller {
@@ -64,7 +65,9 @@ object TweetController extends Controller {
     Async {
       val promiseOfTweets: Promise[List[Tweet]] = TweetProvider.fetchTweets(searchTerm, max)
       promiseOfTweets.map {
-        tweets => Ok(views.html.tweets(tweets))
+        tweets =>
+          tweets.foreach(t => Logger.info(t.toString))
+          Ok(views.html.tweets(tweets))
       }
     }
   }

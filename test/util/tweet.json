@@ -8,7 +8,8 @@
     "refresh_url" : "?since_id=202877016410832897&q=playframework&include_entities=1",
     "results" : [ {
                     "created_at" : "Wed, 16 May 2012 16:34:05 +0000",
-                    "entities" : { "hashtags" : [],
+                    "entities" : {
+                        "hashtags" : [{"indices":[32,36],"text":"playframework"}],
                         "urls" : [ {
                                     "display_url" : "lnkd.in\/pwj2SE",
                                     "expanded_url" : "http:\/\/lnkd.in\/pwj2SE",
