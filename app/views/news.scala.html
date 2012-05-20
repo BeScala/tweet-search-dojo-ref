@@ -1,0 +1,26 @@
+@(list: Seq[model.TweetNews])
+
+@import views.html.helper._
+@import views.html.helper.twitterBootstrap._
+
+
+@main {
+    <div class="row-fluid">
+        <div class="span9">
+            @list.map {  news =>
+            <div class="entry">
+                <div class="title">
+                    <h2><a href="@news.url">@news.title</a></h2>
+                </div>
+                <p>
+                    @if(news.content.length > 500) {
+                        @news.content.substring(0, 500)
+                    } else {
+                        @news.content
+                    }
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+}

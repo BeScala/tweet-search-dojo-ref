@@ -13,7 +13,7 @@ POST    /tweetsearch/save                   controllers.TweetController.save
 GET     /tweetsearch/view/:id               controllers.TweetController.view(id: Long)
 GET     /tweetsearch/tweets/:query          controllers.TweetController.tweets(query: String, max: Int ?= 10)
 GET     /tweetsearch/tweets/:query/:max     controllers.TweetController.tweets(query: String, max: Int)
-
+GET     /tweetsearch/news/                  controllers.TweetController.news
 
 
 # Map static resources from the /public folder to the /assets URL path

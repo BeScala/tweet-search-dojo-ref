@@ -4,10 +4,10 @@ import play.api.mvc._
 
 import service.TweetProvider
 import play.api.libs.concurrent.Promise
-import model.{Tweet, SearchTerm}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.Logger
+import model.{TweetNews, Tweet, SearchTerm}
 
 
 object TweetController extends Controller {
@@ -71,5 +71,7 @@ object TweetController extends Controller {
       }
     }
   }
+
+  def news() = Action { Ok(views.html.news(TweetNews.all)) }
 
 }
